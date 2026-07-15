@@ -1,1 +1,2 @@
 com.patronusgroup.common.dataSync.DataSyncAutoConfiguration
+com.patronusgroup.common.awsSecret.AwsSecretsAutoConfiguration
