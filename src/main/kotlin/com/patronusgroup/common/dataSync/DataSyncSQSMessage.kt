@@ -13,8 +13,8 @@ import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTy
 )
 @JsonSubTypes(
     JsonSubTypes.Type(HolderAddressUpdateSQSMessage::class, name = HOLDER_ADDRESS_UPDATE),
-    JsonSubTypes.Type(HolderAddressUpdateSQSMessage::class, name = HOLDER_BIRTHDAY_UPDATE),
-    JsonSubTypes.Type(HolderAddressUpdateSQSMessage::class, name = HOLDER_PHONE_NUMBER_UPDATE)
+    JsonSubTypes.Type(HolderBirthdayUpdateSQSMessage::class, name = HOLDER_BIRTHDAY_UPDATE),
+    JsonSubTypes.Type(HolderPhoneNumberUpdateSQSMessage::class, name = HOLDER_PHONE_NUMBER_UPDATE)
 )
 sealed class DataSyncSQSMessage {
 
