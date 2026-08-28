@@ -8,7 +8,7 @@ import com.patronusgroup.common.dataSync.DataSyncSQSMessage.ObjectKeyTypeStringV
 import com.patronusgroup.common.domain.enum.Gender
 import java.util.UUID
 
-class HolderGenderUpdateSQSMessage(
+data class HolderGenderUpdateSQSMessage(
     val objectKey: HolderGenderUpdateObjectKey,
     val gender: Gender
 ) : DataSyncSQSMessage() {

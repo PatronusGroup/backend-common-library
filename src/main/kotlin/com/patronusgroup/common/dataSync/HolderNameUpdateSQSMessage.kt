@@ -7,7 +7,7 @@ import com.patronusgroup.common.dataSync.DataSyncSQSMessage.ObjectKeyTypeStringV
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.ObjectKeyTypeStringValue.SALESFORCE
 import java.util.UUID
 
-class HolderNameUpdateSQSMessage(
+data class HolderNameUpdateSQSMessage(
     val objectKey: HolderNameUpdateObjectKey,
     val firstName: String,
     val lastName: String

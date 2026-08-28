@@ -8,7 +8,7 @@ import com.patronusgroup.common.dataSync.DataSyncSQSMessage.ObjectKeyTypeStringV
 import java.time.LocalDate
 import java.util.UUID
 
-class HolderBirthdayUpdateSQSMessage(
+data class HolderBirthdayUpdateSQSMessage(
     val objectKey: HolderBirthdayUpdateObjectKey,
     val birthday: LocalDate
 ) : DataSyncSQSMessage() {
