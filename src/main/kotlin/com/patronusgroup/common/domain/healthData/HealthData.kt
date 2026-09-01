@@ -29,5 +29,10 @@ data class HealthData(
     val chargeBeeCustomerId: String? = null,
     val chargeBeeSubscriptionId: String? = null,
     val submittedBy: String? = null,
-    val keyDeposits: List<HealthDataKeyDeposit>? = null
+    val watchUserId: String? = null,
+    val activationCode: String? = null,
+    val keyDeposit: HealthDataKeyDeposit? = null,
+    val initialWifiInfo: InitialWifiInfo? = null,
+    val usingNonEccPlan: Boolean? = null,
+    val adviceWanted: Boolean? = null
 )
