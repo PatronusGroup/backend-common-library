@@ -1,5 +1,6 @@
 package com.patronusgroup.common.dataSync
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonSubTypes
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.ObjectKeyTypeStringValue.DYNAMO_DB
@@ -26,6 +27,8 @@ data class HolderBirthdayUpdateSQSMessage(
         JsonSubTypes.Type(HolderBirthdayUpdateObjectKey.PostgresDbKey::class, name = POSTGRES_DB),
     )
     sealed class HolderBirthdayUpdateObjectKey {
+
+        @get:JsonIgnore
         abstract val type: ObjectKeyType
 
         data class SalesforceKey(val watchUserId: String) : HolderBirthdayUpdateObjectKey() {
