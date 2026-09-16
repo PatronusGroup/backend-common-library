@@ -1,4 +1,4 @@
 com.patronusgroup.common.dataSync.DataSyncAutoConfiguration
 com.patronusgroup.common.awsSecret.AwsSecretsAutoConfiguration
-com.patronusgroup.common.dao.HolderDeviceSyncedDeviceInfoDao
-com.patronusgroup.common.gateway.HolderDeviceSyncedDeviceInfoGateway
+com.patronusgroup.common.config.CommonBeanAutoConfiguration
+com.patronusgroup.common.config.CommonPersistenceAutoConfiguration
