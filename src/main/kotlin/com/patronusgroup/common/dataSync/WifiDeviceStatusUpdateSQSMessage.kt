@@ -1,7 +1,7 @@
 package com.patronusgroup.common.dataSync
 
 data class WifiDeviceStatusUpdateSQSMessage(
-    val holderDeviceId: Int?,
+    val holderDeviceId: Int,
     val wifiConnected: Boolean
 ) : DataSyncSQSMessage() {
 

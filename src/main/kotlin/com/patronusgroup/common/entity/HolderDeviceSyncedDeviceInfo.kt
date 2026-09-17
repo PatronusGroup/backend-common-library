@@ -10,6 +10,13 @@ data class HolderDeviceSyncedDeviceInfo(
     var isWifiConnected: Boolean = false,
     var syncedOn: LocalDateTime? = null
 ){
+    fun toDao(): HolderDeviceSyncedDeviceInfoDao = HolderDeviceSyncedDeviceInfoDao(
+        hdsdiUuid = hdsdiUuid,
+        holderDeviceId = holderDeviceId,
+        isWifiConnected = isWifiConnected,
+        syncedOn = LocalDateTime.now()
+    )
+
     companion object {
 
         fun fromDao(dao: HolderDeviceSyncedDeviceInfoDao): HolderDeviceSyncedDeviceInfo {
