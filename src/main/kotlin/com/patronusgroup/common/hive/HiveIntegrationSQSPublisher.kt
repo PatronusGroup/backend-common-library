@@ -1,6 +1,5 @@
 package com.patronusgroup.common.hive
 
-import com.patronusgroup.common.dataSync.DataSyncSQSMessage
 import io.awspring.cloud.sqs.operations.SqsTemplate
 
 class HiveIntegrationSQSPublisher(
@@ -8,7 +7,7 @@ class HiveIntegrationSQSPublisher(
     private val properties: HiveIntegrationProperties
 ) {
 
-    fun publish(message: DataSyncSQSMessage) {
+    fun publish(message: HiveIntegrationSQSMessage) {
         sqsTemplate.send(properties.queueName, message)
     }
 }
