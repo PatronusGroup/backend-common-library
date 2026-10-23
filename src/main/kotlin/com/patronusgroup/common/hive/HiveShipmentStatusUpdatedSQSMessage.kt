@@ -6,12 +6,12 @@ import java.time.ZonedDateTime
 import java.util.UUID
 
 data class HiveShipmentStatusUpdatedSQSMessage(
-    val eventType: ShipmentWebhookEventType,
     val eventId: UUID,
     val timestamp: ZonedDateTime,
     val shipmentStatusData: Shipment
-) : HiveIntegrationSQSMessage() {
+) : AbstractHiveShipmentUpdateSQSMessage() {
 
     override val type = HiveIntegrationSQSMessageType.SHIPMENT_STATUS_UPDATED
     override val messageDeduplicationId = eventId.toString()
+    override val eventType = ShipmentWebhookEventType.SHIPMENT_STATUS_UPDATED
 }
