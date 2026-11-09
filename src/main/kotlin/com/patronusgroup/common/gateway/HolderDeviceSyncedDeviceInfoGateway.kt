@@ -1,12 +1,19 @@
 package com.patronusgroup.common.gateway
 
+import com.patronusgroup.common.config.ConditionalProperties
 import com.patronusgroup.common.entity.HolderDeviceSyncedDeviceInfo
 import com.patronusgroup.common.repository.HolderDeviceSyncedDeviceInfoRepository
 import java.time.LocalDateTime
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
+@ConditionalOnProperty(
+    ConditionalProperties.PERSISTENCE_LAYER,
+    havingValue = "true",
+    matchIfMissing = true
+)
 class HolderDeviceSyncedDeviceInfoGateway(
     private val holderDeviceSyncedDeviceInfoRepository: HolderDeviceSyncedDeviceInfoRepository
 ) {

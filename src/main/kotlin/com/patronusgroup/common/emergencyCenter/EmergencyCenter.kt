@@ -1,0 +1,14 @@
+package com.patronusgroup.common.emergencyCenter
+
+data class EmergencyCenter(
+    val emergencyCenterId: Int,
+    val emergencyCenterName: EmergencyCenterEnum,
+    val emergencyCenterStatusId: Int,
+    val isDefault: Boolean,
+    var healthStatus: EmergencyCenterHealthStatus
+) {
+    enum class EmergencyCenterStatus(val databaseId: Int) {
+        ACTIVE(1),
+        INACTIVE(2);
+    }
+}
