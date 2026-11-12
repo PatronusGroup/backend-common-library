@@ -1,5 +1,6 @@
 package com.patronusgroup.common.hive
 
+import com.patronusgroup.common.config.ConditionalProperties
 import com.patronusgroup.common.dao.HiveRateLimit
 import com.patronusgroup.common.repository.HiveRateLimitRepository
 import java.time.Clock
@@ -11,7 +12,11 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
-@ConditionalOnProperty("com.patronusgroup.common.persistence.enabled", havingValue = "true")
+@ConditionalOnProperty(
+    ConditionalProperties.PERSISTENCE_LAYER,
+    havingValue = "true",
+    matchIfMissing = true
+)
 class HiveSlotReservationService(
     private val repository: HiveRateLimitRepository,
     private val clock: Clock,

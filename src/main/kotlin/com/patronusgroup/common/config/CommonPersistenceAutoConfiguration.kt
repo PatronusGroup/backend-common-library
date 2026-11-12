@@ -6,7 +6,11 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @Configuration
-@ConditionalOnProperty("com.patronusgroup.common.persistence.enabled", havingValue = "true")
+@ConditionalOnProperty(
+    ConditionalProperties.PERSISTENCE_LAYER,
+    havingValue = "true",
+    matchIfMissing = true
+)
 @EnableJpaRepositories(basePackages = ["com.patronusgroup.common.repository"])
 @EntityScan(basePackages = ["com.patronusgroup.common.dao"])
 class CommonPersistenceAutoConfiguration

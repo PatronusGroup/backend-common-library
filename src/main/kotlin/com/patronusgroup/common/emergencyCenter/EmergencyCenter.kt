@@ -2,7 +2,7 @@ package com.patronusgroup.common.emergencyCenter
 
 data class EmergencyCenter(
     val emergencyCenterId: Int,
-    val emergencyCenterName: String,
+    val emergencyCenterName: EmergencyCenterEnum,
     val emergencyCenterStatusId: Int,
     val isDefault: Boolean
 ) {
