@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes
 import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTypeStringValue.HOLDER_ADDRESS_UPDATE
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTypeStringValue.HOLDER_BIRTHDAY_UPDATE
+import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTypeStringValue.HOLDER_EMAIL_UPDATE
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTypeStringValue.HOLDER_GENDER_UPDATE
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTypeStringValue.HOLDER_NAME_UPDATE
 import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTypeStringValue.HOLDER_PHONE_NUMBER_UPDATE
@@ -21,7 +22,8 @@ import com.patronusgroup.common.dataSync.DataSyncSQSMessage.DataSyncSQSMessageTy
     JsonSubTypes.Type(HolderPhoneNumberUpdateSQSMessage::class, name = HOLDER_PHONE_NUMBER_UPDATE),
     JsonSubTypes.Type(HolderNameUpdateSQSMessage::class, name = HOLDER_NAME_UPDATE),
     JsonSubTypes.Type(HolderGenderUpdateSQSMessage::class, name = HOLDER_GENDER_UPDATE),
-    JsonSubTypes.Type(WifiDeviceStatusUpdateSQSMessage::class, name = WIFI_DEVICE_STATUS_UPDATE)
+    JsonSubTypes.Type(WifiDeviceStatusUpdateSQSMessage::class, name = WIFI_DEVICE_STATUS_UPDATE),
+    JsonSubTypes.Type(HolderEmailUpdateSQSMessage::class, name = HOLDER_EMAIL_UPDATE)
 )
 sealed class DataSyncSQSMessage {
 
@@ -35,6 +37,7 @@ sealed class DataSyncSQSMessage {
         const val HOLDER_NAME_UPDATE = "HOLDER_NAME_UPDATE"
         const val HOLDER_GENDER_UPDATE = "HOLDER_GENDER_UPDATE"
         const val WIFI_DEVICE_STATUS_UPDATE = "WIFI_DEVICE_STATUS_UPDATE"
+        const val HOLDER_EMAIL_UPDATE = "HOLDER_EMAIL_UPDATE"
     }
 
     enum class DataSyncSQSMessageType {
@@ -43,7 +46,8 @@ sealed class DataSyncSQSMessage {
         HOLDER_PHONE_NUMBER_UPDATE,
         HOLDER_NAME_UPDATE,
         HOLDER_GENDER_UPDATE,
-        WIFI_DEVICE_STATUS_UPDATE
+        WIFI_DEVICE_STATUS_UPDATE,
+        HOLDER_EMAIL_UPDATE
     }
 
     object ObjectKeyTypeStringValue {
